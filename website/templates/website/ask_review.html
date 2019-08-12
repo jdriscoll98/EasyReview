@@ -1,0 +1,44 @@
+{% extends 'website/base.html' %}
+
+{% block custom_css %}
+<style class="text/css">
+nav {
+    visibility: hidden;
+}
+</style>
+{% endblock custom_css %}
+
+{% block login_text %} Log in {% endblock login_text %}
+{% block content %}
+{% include 'website/server_messages.html' %}
+<div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="text-center text-success" style="margin-top: 50px;">Thank you for leaving a review!</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<div>
+    <div class="container">
+        <div class="row" style="margin-top: 25px;">
+            <div class="col-md-12 text-success">
+                <h4 class="text-center">How was your experience with {{ company }} ?&nbsp;</h4>
+            </div>
+        </div>
+    </div>
+</div>
+<div>
+    <div class="container">
+        <div class="row text-center" style="margin-top: 25px;">
+            <div class="col-md-6 col-xl-3 offset-xl-3 text-center"><a href="https://search.google.com/local/writereview?placeid=ChIJuRmXsCmuEmsRZJ5B6bXP7s0" class="far fa-smile" style="font-size: 100px; color: rgb(127,255,0); text-decoration: none;"></a></div>
+            <div class="col-md-6 col-xl-3"><a href="{% url 'website:review' %}" class="far fa-frown" style="font-size: 100px; color: rgb(255,0,0); text-decoration: none;"></a></div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
+
+{% block js %}
+
+{% endblock js %}

@@ -1,0 +1,69 @@
+{% extends 'website/base.html' %}
+
+{% block custom_css %}
+<style type="text/css">
+nav {
+    visibility: hidden;
+}
+</style>
+{% endblock custom_css %}
+
+{% block login_text %} Log in {% endblock login_text %}
+{% block content %}
+{% include 'website/server_messages.html' %}
+
+<div>
+    <div class="container">
+        <div class="row" style="margin-top: 50px;">
+            <div class="col-md-12 text-center">
+                <h1 style="color: rgb(118,179,68);">We are sorry to hear that!</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-xl-6 offset-xl-3">
+                <div class="table">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th class="text-center" colspan="2">
+                                    <h5 style="color: rgb(118,179,68);">Please fill out this form and the owner will contact you directly!</h5>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><input type="text" placeholder="First Name"></td>
+                                <td><input type="text" placeholder="Last Name"></td>
+                            </tr>
+                            <tr>
+                                <td><h3 style="color: rgb(118, 179, 68)">Reason:</h3></td>
+                                <td><select><optgroup label="This is a group"><option value="12" selected="">This is item 1</option><option value="13">This is item 2</option><option value="14">This is item 3</option></optgroup></select></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" rowspan="2"><textarea class="form-control-lg" style="width: 100%;height: 100%;" placeholder="Start your review here..."></textarea></td>
+                            </tr>
+                            <tr></tr>
+                            <tr>
+                                <td colspan="2"><button class="btn btn-success" type="submit" style="width: 100%;">Submit</button></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" rowspan="2"></td>
+                            </tr>
+                            <tr></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
+
+{% block js %}
+<script>
+</script>
+{% endblock js %}

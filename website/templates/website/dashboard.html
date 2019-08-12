@@ -1,0 +1,65 @@
+{% extends 'website/base.html' %}
+
+{% block custom_css %}
+{% endblock custom_css %}
+
+{% block login_text %} Log out {% endblock login_text %}
+
+
+{% block content %}
+{% include 'website/server_messages.html' %}
+<div class="container">
+    <div class="row" style="margin-top: 25px;">
+        <div class="col-md-12 text-left">
+            <h1 class="text-center" style="color: rgb(118,179,68);">{{ company_name }}'s Dashboard</h1>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row" style="margin-top: 25px;">
+        <div class="col-md-6">
+            <div></div>
+            <div class="table-responsive" style="width: 80%;margin: auto;">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th class="table-success" colspan="2">Pending Responses</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for customer in company.get_pending_customers %}
+                        <tr style="background-color: #ffffff;">
+                            <td style="width: 80%;">Example Customer</td>
+                            <td style="width: 20%;"><i class="fa fa-reply border rounded-0"></i></td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div></div>
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th class="table-success">Review Statistics</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr></tr>
+                        <tr>
+                            <td><img src="/static/website/images/professional-graphs-and-charts-670x335.jpg" style="height: 100%;width: 100%;"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
+
+{% block js %}
+<script>
+</script>
+{% endblock js %}
