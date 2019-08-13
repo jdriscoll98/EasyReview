@@ -1,0 +1,53 @@
+{% extends 'website/base.html' %}
+
+{% block custom_css %}
+{% endblock custom_css %}
+
+{% block login_text %} Log in {% endblock login_text %}
+{% block content %}
+{% include 'website/server_messages.html' %}
+<div class="container">
+    <div class="row" style="margin-top: 75px;">
+        <div class="col">
+            <h1 class="text-center" style="color: rgb(118,179,68);">Struggling to Get Good Reviews?&nbsp;</h1>
+        </div>
+    </div>
+</div>
+<div class="col-auto text-center col-xl-4 offset-xl-4">
+    <div class="table">
+        <form method="POST">
+            {% csrf_token %}
+        <table class="table">
+            <thead>
+                <tr></tr>
+            </thead>
+            <tbody style="width: 100%;">
+                <br />
+                <tr colspan=2>
+                    <h1>One Last Thing!</h1>
+                </tr>
+                <tr colspan=2>
+                <h3>Please Set Your Google Place ID</h3>
+                <h3>This allows clients to leave google reviews for you!</h3>
+                    <ul>
+                    <li>Go to <a target="_blank" href="https://developers.google.com/places/place-id">https://developers.google.com/places/place-id</a> and search your business name</li>
+                    <li>Then copy and paste the "Place ID" here and click submit! That's it!</li>
+                    </ul>
+                </tr>
+                <tr>
+                    <td><strong>{{ form.place_id.label }}: </strong></td><td colspan="2">{{ form.place_id }}</td>
+                </tr>
+                <tr>
+                    <td colspan="2"><button class="btn btn-success shadow" type="submit" style="width: 80%;margin-right: 10%;margin-left: 10%;">Access Your Account</button></td>
+                </tr>
+            </tbody>
+        </table>
+        </form>
+    </div>
+</div>
+{% endblock content %}
+
+{% block js %}
+<script>
+</script>
+{% endblock js %}

@@ -1,0 +1,29 @@
+{% extends 'website/base.html' %}
+
+{% block custom_css %}
+<style class="text/css">
+nav {
+    visibility: hidden;
+}
+</style>
+{% endblock custom_css %}
+
+{% block login_text %} Log in {% endblock login_text %}
+{% block content %}
+{% include 'website/server_messages.html' %}
+<div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="text-center text-success" style="margin-top: 50px;">Thanks!</h1><br/>
+                <h3 class="text-center text-success">Your review has been recorded! <br /> If you provided an email, the owner will contact you shortly!</h3>
+            </div>
+        </div>
+    </div>
+</div>
+<div>
+{% endblock content %}
+
+{% block js %}
+
+{% endblock js %}

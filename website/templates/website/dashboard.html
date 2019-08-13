@@ -3,6 +3,10 @@
 {% block custom_css %}
 {% endblock custom_css %}
 
+{% block nav_items %}
+<li class="nav-item" role="presentation"><button class="email">Send Email</button></li>
+{% endblock nav_items %}
+
 {% block login_text %} Log out {% endblock login_text %}
 
 
@@ -29,7 +33,7 @@
                     <tbody>
                         {% for customer in company.get_pending_customers %}
                         <tr style="background-color: #ffffff;">
-                            <td style="width: 80%;">Example Customer</td>
+                            <td style="width: 80%;">{{ customer.name|default:"Anonymous" }}</td>
                             <td style="width: 20%;"><i class="fa fa-reply border rounded-0"></i></td>
                         </tr>
                         {% endfor %}
@@ -55,11 +59,32 @@
                 </table>
             </div>
         </div>
+        </div>
+
+    </div>
+
+<div class="modal fade" id="modalEmail" role="dialog" tabindex="-1">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Send Email</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
+                <form method="POST">
+                    {%  csrf_token %}
+            <div class="modal-body">
+                {{ form.as_p}}
+            </div>
+            <div class="modal-footer"><button class="btn btn-light" type="button" data-dismiss="modal">Close</button><button class="btn btn-success" type="submit">Send</button></div>
+            </form>
+        </div>
     </div>
 </div>
+
 {% endblock content %}
 
 {% block js %}
 <script>
+    $('.email').on('click', function() {
+        $('#modalEmail').modal('toggle');
+    });
 </script>
 {% endblock js %}

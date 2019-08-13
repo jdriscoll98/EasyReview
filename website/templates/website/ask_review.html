@@ -33,7 +33,7 @@ nav {
     <div class="container">
         <div class="row text-center" style="margin-top: 25px;">
             <div class="col-md-6 col-xl-3 offset-xl-3 text-center"><a href="https://search.google.com/local/writereview?placeid=ChIJuRmXsCmuEmsRZJ5B6bXP7s0" class="far fa-smile" style="font-size: 100px; color: rgb(127,255,0); text-decoration: none;"></a></div>
-            <div class="col-md-6 col-xl-3"><a href="{% url 'website:review' %}" class="far fa-frown" style="font-size: 100px; color: rgb(255,0,0); text-decoration: none;"></a></div>
+            <div class="col-md-6 col-xl-3"><a href="{% url 'website:review' company.slug %}" class="far fa-frown" style="font-size: 100px; color: rgb(255,0,0); text-decoration: none;"></a></div>
         </div>
     </div>
 </div>
